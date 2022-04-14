@@ -7,7 +7,7 @@ float num1, num2, resultado;
 
 void soma(){
 
-    printf("Informe os numeros para o calculo.\n");
+    printf("-------SOMA------\n");
     printf("Digite o primeiro numero: \n");
     scanf("%f", &num1);
     printf("Digite o segundo numero: \n");
@@ -24,7 +24,7 @@ void soma(){
 
 void subtracao(){
 
-    printf("Informe os numeros para o calculo.\n");
+    printf("------SUBTRAÇÃO--------\n");
     printf("Digite o primeiro numero: \n");
     scanf("%f", &num1);
     printf("Digite o segundo numero: \n");
@@ -41,7 +41,7 @@ void subtracao(){
 
 void multiplicacao(){
 
-    printf("Informe os numeros para o calculo.\n");
+    printf("-----MULTIPLICAÇÃO------.\n");
     printf("Digite o primeiro numero: \n");
     scanf("%f", &num1);
     printf("Digite o segundo numero: \n");
@@ -58,7 +58,7 @@ void multiplicacao(){
 
 void divisao(){
 
-    printf("Informe os numeros para o calculo.\n");
+    printf("-------DIVISÃO-------.\n");
     printf("Digite o primeiro numero: \n");
     scanf("%f", &num1);
     printf("Digite o segundo numero: \n");
@@ -114,6 +114,5 @@ default: printf("\nOpção invalida\n\n");
 int main(){
     
     menu();
-    system("clear");
     return 0;
 }

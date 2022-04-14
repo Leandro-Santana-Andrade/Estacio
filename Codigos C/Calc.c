@@ -18,7 +18,6 @@ void soma(){
     printf("-----------------fim-----------------\n\n");
     system('pause');
     //system("clear");
-    //return 0;
     menu();
 
 }
@@ -36,7 +35,6 @@ void subtracao(){
     printf("-----------------fim-----------------\n\n");
     system('pause');
     //system("clear");
-    //return 0;
     menu(); 
 
 }
@@ -54,7 +52,6 @@ void multiplicacao(){
     printf("-----------------fim-----------------\n\n");
     system('pause');
     //system("clear");
-    //return 0;
     menu();
 
 }
@@ -72,7 +69,6 @@ void divisao(){
     printf("-----------------fim-----------------\n\n");
     system('pause');
     //system("clear");
-    //return 0;
     menu();
 }
 
@@ -111,12 +107,6 @@ case 5: sair();
 default: printf("\nOpção invalida\n\n");
     menu();
     break;
-
-return 0;
-
-system("pause");
-menu();
-
 }
 
 }

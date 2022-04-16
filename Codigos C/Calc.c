@@ -1,10 +1,14 @@
+//Bibliotecas
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 //Calculadora simples
 
+//variaveis
 float num1, num2, resultado;
 
+//Funções
 void soma(){
     printf("-------Soma-------\n");
     printf("Digite os numeros para operação: \n");
@@ -68,7 +72,7 @@ sair(){
             break;
         }
 }
-
+//Menu para escolher a operação matematica
 void menu(){
     int opcao;
     printf("\n\nEscolha uma operação:\n\n");
@@ -101,7 +105,11 @@ void menu(){
     }
 }
 
+// Função principal
 int main(){
+    
+    setlocale(LC_ALL, "Portuguese_Brasil"); //Exibir caracteres do português no prompt
+
     menu();
     return 0;
 }

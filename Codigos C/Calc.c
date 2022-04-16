@@ -53,7 +53,7 @@ void divisao(){
     menu();
 }
 
-sair(){
+void sair(){
     int fechar;
     printf("\nTem certeza?\nResponta 1 para (SIM) e 2 para (NÃO): ");
     scanf("%d", &fechar);

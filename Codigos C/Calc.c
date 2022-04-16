@@ -1,118 +1,107 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*Calculadora com menu para escolha de operação*/
+//Calculadora simples
 
 float num1, num2, resultado;
 
 void soma(){
-
-    printf("-------SOMA------\n");
-    printf("Digite o primeiro numero: \n");
-    scanf("%f", &num1);
-    printf("Digite o segundo numero: \n");
-    scanf("%f", &num2);
-
+    printf("-------Soma-------\n");
+    printf("Digite os numeros para operação: \n");
+    scanf("%f %f", &num1, &num2);
     resultado = num1 + num2;
-    printf("Resultado: %.2f\n\n", resultado);
-    printf("-----------------fim-----------------\n\n");
-    system('pause');
-    //system("clear");
+    printf("A soma de %.2f + %.2f é igual a %.2f", num1, num2, resultado);
+    system("pause");
+    system("cls");
     menu();
-
 }
 
 void subtracao(){
-
-    printf("------SUBTRAÇÃO--------\n");
-    printf("Digite o primeiro numero: \n");
-    scanf("%f", &num1);
-    printf("Digite o segundo numero: \n");
-    scanf("%f", &num2);
-
+    printf("-------Subtração-------\n");
+    printf("Digite os numeros para operação: \n");
+    scanf("%f %f", &num1, &num2);
     resultado = num1 - num2;
-    printf("Resultado: %.2f\n\n", resultado);
-    printf("-----------------fim-----------------\n\n");
-    system('pause');
-    //system("clear");
-    menu(); 
-
+    printf("A soma de %.2f - %.2f é igual a %.2f", num1, num2, resultado);
+    system("pause");
+    system("cls");
+    menu();
 }
 
 void multiplicacao(){
-
-    printf("-----MULTIPLICAÇÃO------.\n");
-    printf("Digite o primeiro numero: \n");
-    scanf("%f", &num1);
-    printf("Digite o segundo numero: \n");
-    scanf("%f", &num2);
-
+    printf("-------Multiplicação-------\n");
+    printf("Digite os numeros para operação: \n");
+    scanf("%f %f", &num1, &num2);
     resultado = num1 * num2;
-    printf("Resultado: %.2f\n\n", resultado);
-    printf("-----------------fim-----------------\n\n");
-    system('pause');
-    //system("clear");
+    printf("A soma de %.2f * %.2f é igual a %.2f", num1, num2, resultado);
+    system("pause");
+    system("cls");
     menu();
-
 }
 
 void divisao(){
-
-    printf("-------DIVISÃO-------.\n");
-    printf("Digite o primeiro numero: \n");
-    scanf("%f", &num1);
-    printf("Digite o segundo numero: \n");
-    scanf("%f", &num2);
-
+    printf("-------Divisão-------\n");
+    printf("Digite os numeros para operação: \n");
+    scanf("%f %f", &num1, &num2);
     resultado = num1 / num2;
-    printf("Resultado: %.2f\n\n", resultado);
-    printf("-----------------fim-----------------\n\n");
-    system('pause');
-    //system("clear");
+    printf("A soma de %.2f / %.2f é igual a %.2f", num1, num2, resultado);
+    system("pause");
+    system("cls");
     menu();
 }
 
-void sair(){
-
-system("exit");
-printf("Fechando aplicativo, aguarde...\n");
-
+sair(){
+    int fechar;
+    printf("\nTem certeza?\nResponta 1 para (SIM) e 2 para (NÃO): ");
+    scanf("%d", &fechar);
+        
+        switch(fechar){
+        case 1:
+            system("exit");
+            printf("\nFechando aplicação, aguarde...\n");
+            break;
+        case 2:
+            menu();
+            break;
+        default:
+            printf("\nResponta 1 para (SIM) e 2 para (NÃO)\n");
+            sair();
+            break;
+        }
 }
 
-menu(){
-
-int opcao;
-
-printf("Escolha o operação:\n");
-printf("1 - Soma\n");
-printf("2 - Subtracao\n");
-printf("3 - Multiplicação\n");
-printf("4 - Divisao\n");
-printf("5 - Sair\n");
-printf("\nInforme o numero: ");
-scanf("%d", &opcao);
-
-switch (opcao)
-{
-case 1: soma();
-    break;
-case 2: subtracao();
-    break;
-case 3: multiplicacao();
-    break;
-case 4: divisao();
-    break;
-case 5: sair();
-    break;
-default: printf("\nOpção invalida\n\n");
-    menu();
-    break;
-}
-
+void menu(){
+    int opcao;
+    printf("\n\nEscolha uma operação:\n\n");
+    printf(" 1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n 5 - Sair\n\n");
+    printf("Informe a opção: ");
+    scanf("%d", &opcao);
+    
+    switch (opcao){
+        case 1:
+            soma();
+            break;
+        case 2:
+            subtracao();
+            break;
+        case 3:
+            multiplicacao();
+            break;
+        case 4:
+            divisao();
+            break;
+        case 5:
+            sair();
+            break;
+        default:
+            printf("Digito invalido, tente novamente.\n");
+            system("pause");
+            system("cls");
+            menu();
+            break;   
+    }
 }
 
 int main(){
-    
     menu();
     return 0;
 }

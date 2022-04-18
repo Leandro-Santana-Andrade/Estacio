@@ -1,20 +1,17 @@
-//Bibliotecas
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
+#include <math.h>
 
 //Calculadora simples
 
-//variaveis
 float num1, num2, resultado;
 
-//Funções
 void soma(){
     printf("-------Soma-------\n");
     printf("Digite os numeros para operação: \n");
     scanf("%f %f", &num1, &num2);
     resultado = num1 + num2;
-    printf("A soma de %.2f + %.2f é igual a %.2f", num1, num2, resultado);
+    printf("A soma de %.2f + %.2f é igual a %.2f\n\n", num1, num2, resultado);
     system("pause");
     system("cls");
     menu();
@@ -25,7 +22,7 @@ void subtracao(){
     printf("Digite os numeros para operação: \n");
     scanf("%f %f", &num1, &num2);
     resultado = num1 - num2;
-    printf("A soma de %.2f - %.2f é igual a %.2f", num1, num2, resultado);
+    printf("A soma de %.2f - %.2f é igual a %.2f\n\n", num1, num2, resultado);
     system("pause");
     system("cls");
     menu();
@@ -36,7 +33,7 @@ void multiplicacao(){
     printf("Digite os numeros para operação: \n");
     scanf("%f %f", &num1, &num2);
     resultado = num1 * num2;
-    printf("A soma de %.2f * %.2f é igual a %.2f", num1, num2, resultado);
+    printf("A soma de %.2f * %.2f é igual a %.2f\n\n", num1, num2, resultado);
     system("pause");
     system("cls");
     menu();
@@ -47,7 +44,29 @@ void divisao(){
     printf("Digite os numeros para operação: \n");
     scanf("%f %f", &num1, &num2);
     resultado = num1 / num2;
-    printf("A soma de %.2f / %.2f é igual a %.2f", num1, num2, resultado);
+    printf("A soma de %.2f / %.2f é igual a %.2f\n\n", num1, num2, resultado);
+    system("pause");
+    system("cls");
+    menu();
+}
+
+void raiz(){
+    int numero;
+    printf("Digite o numero para operação: \n");
+    scanf("%d", &numero);
+    resultado = sqrt(numero);
+    printf("Valor da Raiz Quadrade de %d é: %.0f\n\n", numero, resultado);
+    system("pause");
+    system("cls");
+    menu();
+}
+
+void potencia(){
+    int base, expoente;
+    printf("Digite os numeros para operação: \n");
+    scanf("%d %d", &base, &expoente);
+    resultado = pow(base, expoente);
+    printf("Valor de %d elevado a %d é: %.0f\n\n", base, expoente, resultado);
     system("pause");
     system("cls");
     menu();
@@ -56,8 +75,7 @@ void divisao(){
 void sair(){
     int fechar;
     printf("\nTem certeza?\nResponta 1 para (SIM) e 2 para (NÃO): ");
-    scanf("%d", &fechar);
-        
+    scanf("%d", &fechar);    
         switch(fechar){
         case 1:
             system("exit");
@@ -72,11 +90,11 @@ void sair(){
             break;
         }
 }
-//Menu para escolher a operação matematica
+
 void menu(){
     int opcao;
     printf("\n\nEscolha uma operação:\n\n");
-    printf(" 1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n 5 - Sair\n\n");
+    printf(" 1 - Soma\n 2 - Subtração\n 3 - Multiplicação\n 4 - Divisão\n 5 - Raiz Quadrada\n 6 - Potenciação\n 7 - Sair\n\n");
     printf("Informe a opção: ");
     scanf("%d", &opcao);
     
@@ -94,6 +112,12 @@ void menu(){
             divisao();
             break;
         case 5:
+            raiz();
+            break;
+        case 6:
+            potencia();
+            break;    
+        case 7:
             sair();
             break;
         default:
@@ -105,11 +129,7 @@ void menu(){
     }
 }
 
-// Função principal
 int main(){
-    
-    setlocale(LC_ALL, "Portuguese_Brasil"); //Exibir caracteres do português no prompt
-
     menu();
     return 0;
 }
